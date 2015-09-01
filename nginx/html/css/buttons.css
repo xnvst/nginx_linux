@@ -1,0 +1,73 @@
+body {
+  background-color:#ffffff;
+  font:normal 100% Arial,Geneva,sans-serif;
+}
+img {
+  float:right;
+  cursor:pointer;
+}
+h1 {
+  margin:0px;
+  font-size:18px;
+}
+h2 {
+  text-align:left;
+  font-size:14px;
+  margin:0px 0px 3px 0px;
+  padding:20px 0px 0px 5px;
+  border-bottom:1px solid #000000;
+}
+h2:first-child {
+  padding:0px;
+}
+
+.comboButtons {
+  margin:0px;
+}
+.comboButtons tr td {
+  font-size:9px;
+  border:2px outset #007700;
+  background-color:#007700;
+  text-align:center;
+  width:36px;
+  height:36px;
+  padding:0px;
+}
+.comboButtons tr td div {
+  width:36px;
+  overflow:hidden;
+}
+.comboButtons tr td.pressed {
+  border-color:#00dd00;
+  background-color:#00dd00;
+}
+.comboButtons tr td.value {
+  width:auto;
+  height:auto;
+  border:0px none;
+  background-color:transparent;
+  font-size:14px;
+  padding:0px 0px 0px 5px;
+}
+.comboButtons tr td.value big {
+  font-weight:bold;
+  font-size:20px;
+}
+.comboButtons tr.buffer td {
+  border:0px none;
+  background-color:transparent;
+  height:5px;
+  width:auto;
+}
+
+.paramButtons {
+  font-size:11px;
+}
+.paramButtons tr th {
+  text-align:left;
+  padding:1px 10px 1px 1px;
+}
+.paramButtons tr td {
+  text-align:left;
+  width:99%;
+}

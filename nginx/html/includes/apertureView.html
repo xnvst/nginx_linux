@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/smoothness/jquery-ui-1.8.21.custom.css" /> 
+  <link rel="stylesheet" type="text/css" href="../css/features-with-jquery.css" /> 
+  <link rel="stylesheet" type="text/css" href="../css/web.css" /> 
+  <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+  <script type="text/javascript" src="../js/slider-build-with-jquery.js"></script>
+  
+  <style>
+	.verticaltext{
+  
+    position: absolute;
+
+    width: 15px;
+    writing-mode: tb-rl;
+   }
+   .box_rotate {
+     -moz-transform: rotate(-90deg);  /* FF3.5+ */
+       -o-transform: rotate(-90deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg);  /* Saf3.1+, Chrome */
+             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=3.0);  /* IE6,IE7 */
+         -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3.0)"; /* IE8 */
+    }
+
+	.box_rotate180 {
+     -moz-transform: rotate(-180deg);  /* FF3.5+ */
+       -o-transform: rotate(-180deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-180deg);  /* Saf3.1+, Chrome */
+             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2.0);  /* IE6,IE7 */
+         -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2.0)"; /* IE8 */
+    }
+  </style>
+
+
+<script type="text/javascript">
+   //#draggablev { position:absolute;  width: 240px; height: 4px; padding: 0em; background:#FF0000;}
+	//#draggableh { position:absolute; width: 4px; height: 240px; padding: 0em; background:#3399FF; }
+var line_width=3;
+var line_length = 260;
+var TABLE_WIDTH = 240;
+var TABLE_HEIGHT = 240;
+var hMax = 99999.0;
+var vMax = 99999.0;
+var COL_DIVISOR = (hMax > 0 ? hMax : 99999.0) /   TABLE_WIDTH.toFixed(1);
+var ROW_DIVISOR = (vMax > 0 ? vMax : 99999.0) / TABLE_HEIGHT.toFixed(1);
+var frameId;
+var  debugAperture =false;
+			
+$(document).ready(function(){
+//  buildSliderH('hstart','horinzontal');
+//  buildSliderH('hstop', 'horinzontal');
+//  buildSliderH('vstart', 'vertical');
+//  buildSliderH('vstop', 'vertical');
+  
+//  buildDraggable('hstart', 'x', "draggables_con", 0, 0);
+//  buildDraggable('hstop', 'x', "draggables_con", 240,0);
+//  buildDraggable('vstart', 'y', "draggables_con2", 0, 0);
+//  buildDraggable('vstop', 'y',  "draggables_con2", 0,240);
+
+//test
+// buildApertureView("My test", 88888, 88888, "58@i",  1,  "59@i", 1169,  "60@i", 0,  "61@i",1027)
+});
+
+//function buildBaseApertureView(myframeId, viewTitle, myHMax, myVMax, hStartID,  hStopID,   vStartID,  vStopID ){
+function buildBaseApertureView(myframeId, viewTitle){
+  frameId =  myframeId,
+ 
+ hMax = 99999.0;
+ vMax = 99999.0;
+ 
+ COL_DIVISOR =  hMax /   TABLE_WIDTH.toFixed(1);
+ ROW_DIVISOR =  vMax /   TABLE_HEIGHT.toFixed(1);
+  
+  buildSliderH('hstart','horinzontal');
+  buildSliderH('hstop', 'horinzontal');
+  buildSliderH('vstart', 'vertical');
+  buildSliderH('vstop', 'vertical');
+  
+  buildDraggable('hstart', 'x', "draggables_con", 0, 0);
+  buildDraggable('hstop', 'x', "draggables_con", 240,0);
+  buildDraggable('vstart', 'y', "draggables_con2", 0, 0);
+  buildDraggable('vstop', 'y',  "draggables_con2", 0,240);
+  
+   $("#apertureTitle").text(viewTitle);
+}
+
+function buildApertureView(myframeId, viewTitle, myHMax, myVMax, hStartID, hStartVal, hStopID,  hStopVal, vStartID, vStartVal, vStopID, vStopVal){
+ 
+  buildBaseApertureView(myframeId, viewTitle);
+  
+  $('#hstart_lbl').text(hStartVal);
+  $('#hstop_lbl').text(hStopVal);
+  $('#vstart_lbl').text(vStartVal);
+  $('#vstop_lbl').text(vStopVal);
+ 
+   updateGraph( "hstart", hStartVal, false);  
+   updateGraph( "hstop", hStopVal, false);
+   updateGraph( "vstart", vStartVal, false);
+   updateGraph( "vstop", vStopVal, false);
+}
+
+
+function buildDraggable(id, myaxis,  mycontainer,  toleft, totop){
+
+    
+    $( '#'+id+'_draggable'  ).css("top",  totop +"px" );
+    $( '#'+id+'_draggable' ).css("left", toleft+"px" );
+	
+	if(id=='hstart'|| id=='hstop' )
+	{
+	    $( '#'+id+'_draggable'  ).css("width", "3px");
+	    $( '#'+id+'_draggable'  ).css("height", "240px");
+	}
+	else
+	{
+	    $( '#'+id+'_draggable'  ).css("width", "240px");
+	    $( '#'+id+'_draggable'  ).css("height", "3px");
+	}
+}
+
+function updateGraph( myId, myVal, updateParent)
+{
+  
+  if(debugAperture) alert("update to parant ele="+ frameId+myId);
+ 
+ if(updateParent)
+   parent.updatePageElement(frameId+myId, myVal);
+   
+   COL_DIVISOR = (hMax > 0 ? hMax : 99999.0) /   TABLE_WIDTH.toFixed(1);
+   ROW_DIVISOR = (vMax > 0 ? vMax : 99999.0) / TABLE_HEIGHT.toFixed(1);
+  var myValN ;
+ 
+  if(myId=="hstart")
+  {
+    myValN = parseInt(myVal/COL_DIVISOR.toFixed(1));
+   $('#hstart_draggable').css("left", myValN+'px' );
+  }
+  else if(myId=="hstop")
+  {
+      myValN = parseInt(myVal/COL_DIVISOR.toFixed(1));
+   $('#hstop_draggable').css("left", myValN+'px' );
+  }
+  else if(myId=="vstart")
+  {
+    myValN = parseInt(myVal/ROW_DIVISOR.toFixed(1));
+   $('#vstart_draggable').css("top", myValN+'px' );
+  }
+  else if(myId=="vstop")
+  {
+     myValN = parseInt(myVal/ROW_DIVISOR.toFixed(1));
+    $('#vstop_draggable').css("top", myValN+'px' );
+  }
+  
+   $("#status").text("update Graph: "+myId+"="+ myVal+"-- myValN="+ myValN);
+}
+
+function refreshGraph( )
+{
+ 
+   COL_DIVISOR =  hMax /   TABLE_WIDTH.toFixed(1);
+   ROW_DIVISOR =  vMax/ TABLE_HEIGHT.toFixed(1);
+   
+  var myVal=0;
+  var myValN=0 ;
+ 
+  if(myId=="hstart")
+  {
+    myVal=  parseInt($('#hstart_lbl').text());
+    myValN = parseInt(myVal/COL_DIVISOR.toFixed(1));
+   $('#hstart_draggable').css("left", myValN+'px' );
+  }
+  else if(myId=="hstop")
+  {
+      myVal=  parseInt($('#hstop_lbl').text());
+      myValN = parseInt(myVal/COL_DIVISOR.toFixed(1));
+   $('#hstop_draggable').css("left", myValN+'px' );
+  }
+  else if(myId=="vstart")
+  {
+    myVal=  parseInt($('#vstart_lbl').text());
+    myValN = parseInt(myVal/ROW_DIVISOR.toFixed(1));
+   $('#vstart_draggable').css("top", myValN+'px' );
+  }
+  else if(myId=="vstop")
+  {
+     myVal=  parseInt($('#vstop_lbl').text());
+     myValN = parseInt(myVal/ROW_DIVISOR.toFixed(1));
+    $('#vstop_draggable').css("top", myValN+'px' );
+  }
+  
+   $("#status").text("update Graph: "+myId+"="+ myVal+"-- myValN="+ myValN);
+}
+function buildSliderH(elementId_orig, myorientation){
+ 
+   if(debugAperture)  alert("build slider for "+ elementId_orig);
+  var elementId = elementId_orig.replace(/@/g, 'at');   
+       elementId = elementId.replace(/\./g, 'dot');  
+	   
+  var iVal = parseInt($('#'+elementId+'_lbl').text());  
+  
+
+  //reverse the direction
+   if(elementId=="vstart" || elementId=="vstop")
+     iVal = vMax - parseInt($('#'+elementId+'_lbl').text());
+	 
+	 if(debugAperture) alert(elementId_orig+"  has value="+ iVal);
+	  
+  var minVal=0;  
+  var maxVal=99999; 
+    
+  if(elementId=="hstart")
+    maxVal = hMax-1;
+  else if( elementId=="hstop")
+      maxVal = hMax;
+  else if(elementId=="vstart")
+      maxVal = vMax -1;
+   else if(elementId=="vstop")
+	   maxVal = vMax;
+	   
+  if(elementId=="hstop"|| elementId=="vstop")
+     minVal=1;
+	 
+  if($("#"+elementId+"_slider"))
+  {
+ 
+    $("#"+elementId+"_slider").slider({
+	   orientation: myorientation, 
+       min:minVal, 
+	   max:maxVal,
+	   value:iVal,
+	   change:function(event, ui)
+	   {
+	      if(debugAperture)  alert(event+"__"+ui.value);
+		
+		if(elementId=="hstart"|| elementId=="hstop")
+	    { 
+		  $("#"+elementId+"_lbl").text(ui.value);
+		   
+		}
+		else
+		{
+	       var myVal= parseInt(ui.value);
+		   myVal = parseInt($(this).slider("option", "max")) - myVal;
+	       $("#"+elementId+"_lbl").text(myVal);
+		  
+		 }
+	   },
+	   stop:function(event, ui)
+	   {
+	   
+	    if(elementId=="hstart"|| elementId=="hstop")
+		{
+		  updateGraph( elementId, ui.value, true);
+		  validateSliderValues(elementId, ui.value) ;
+		}
+		else
+		{
+	      var myVal= parseInt(ui.value);
+		    myVal = parseInt($(this).slider("option", "max")) - myVal;
+		    updateGraph( elementId, myVal, true);
+			validateSliderValues(elementId, ui.value) ;
+		}
+		 
+	   }  
+     });
+   }
+  
+} 
+
+
+
+function setMaximumValue(maxType , myVal) 
+{
+   var myName = maxType.toLowerCase();
+   
+   if(myName.indexOf("hmax")>-1)
+   {
+        if(debugAperture)  alert("set hmax="+ myVal) ;
+		
+		$("#hstart_slider").slider("option", "max", parseInt(myVal)-1) ;
+		$("#hstop_slider").slider("option", "max", parseInt(myVal)) ;  
+		hMax= myVal;
+      
+       COL_DIVISOR =  hMax  /   TABLE_WIDTH.toFixed(1);
+   }
+   else  if(myName.indexOf("vmax")>-1)
+   {
+       $("#vstart_slider").slider("option", "max", parseInt(myVal)-1);  
+	   $("#vstop_slider").slider("option", "max", parseInt(myVal));
+	    vMax= myVal;
+	    
+		ROW_DIVISOR =  vMax   / TABLE_HEIGHT.toFixed(1);
+   }
+}
+
+
+function setSliderValueByName(elementName , myVal) 
+{
+  var myName = elementName.toLowerCase();
+   
+ if(debugAperture) alert("setSliderValueByName: name="+elementName +"--"+ myVal);
+   if(myName.indexOf("hstart")>-1)
+   {
+		$("#hstart_slider").slider("option", "value", parseInt(myVal)) ;
+	    $("#hstart_lbl").text(myVal) ;
+		updateGraph('hstart', myVal, false);
+   }
+   
+   if(myName.indexOf("hstop")>-1)
+   {
+		$("#hstop_slider").slider("option", "value", parseInt(myVal)) ;
+	    $("#hstop_lbl").text(myVal) ;
+		updateGraph('hstop', myVal, false);
+   }
+   
+   if(myName.indexOf("vstart")>-1)
+   {
+     var myMax=  parseInt($("#vstart_slider").slider("option", "max"));
+	 var myValN =  myMax - myVal;
+	 
+	   $("#vstsrt_slider").slider("option", "value", myValN);
+	   updateGraph('vstart', myVal, false);
+   }
+   
+   if(myName.indexOf("vstop")>-1)
+   {
+     var myMax=  parseInt($("#vstop_slider").slider("option", "max"));
+	 var myValN =  myMax - myVal;
+	 
+	   $("#vstop_slider").slider("option", "value", myValN);
+	   updateGraph('vstop', myVal,false);
+   }
+}
+
+ 
+
+function validateSliderValues(elementId , myUIVal) 
+{
+   
+   if(elementId=="hstart")
+   {
+	  if( parseInt($("#hstop_slider").slider("option", "value") )<= myUIVal)
+		$("#hstop_slider").slider("option", "value", parseInt(myUIVal)+1) ;
+   }
+   
+   if( elementId=="hstop")
+   {   
+	  if( parseInt($("#hstart_slider").slider("option", "value") )>= myUIVal)
+	   $("#hstart_slider").slider("option", "value", parseInt(myUIVal)-1);
+   }
+   
+   if(elementId=="vstart")
+   {
+     var myMax=  parseInt($("#vstart_slider").slider("option", "max"));
+	 var myValN =  myMax - myUIVal;
+	 
+	  var compare= myMax- parseInt($("#vstop_slider").slider("option", "value") );
+	  if( compare<= myValN)
+	   $("#vstop_slider").slider("option", "value", parseInt(myUIVal)-1);
+   }
+   
+   if(elementId=="vstop")
+   {
+     var myMax=  parseInt($("#vstop_slider").slider("option", "max"));
+     var myValN =  myMax - myUIVal;
+	
+  
+	var compare= myMax- parseInt($("#vstart_slider").slider("option", "value") );  
+	if(compare >= myValN)
+	   $("#vstart_slider").slider("option", "value", parseInt(myUIVal)+1);  
+   }
+}
+</script>
+
+</head>
+<body>
+  
+  <div id="draggables_con" style="position:absolute; left:150px; top:120px; width: 240px; height: 240px; background-color:#B8B8B8;z-index:-199">
+	 
+
+     <div id="hstart_draggable"  style="position:absolute; background:#4D4D4D;" >
+        <!-- HStart -->
+     </div>
+ 
+     <div id="hstop_draggable"   style="position:absolute; background:#4D4D4D;">
+        <!-- HStop-->
+     </div>
+ </div>
+ 
+ <div id="draggables_con2" style="position:absolute; left:150px; top:120px; width: 240px; height: 240px; background:none;z-index:-99">
+
+     <div id="vstart_draggable"  style="position:absolute; background:#4D4D4D;" >
+      <!-- VStart-->  
+     </div>
+ 
+     <div id="vstop_draggable" style="position:absolute; background:#4D4D4D;">
+      <!--    VStop -->  
+     </div>
+
+</div>
+
+<div style="position:absolute; top:10px; left:25px;" id="hstart_title"> H Start</div>
+<div style="position:absolute; top:15px; left:95px; width: 290px; height: 6px" id="hstart_slider"  > </div> 
+<span style="position:absolute; top:10px; left:400px;" id="hstart_lbl"> 0</span>
+
+ 
+
+<div style="position:absolute; top:45px; left:25px;"> H Stop</div>
+<div style="position:absolute; top:50px; left:95px;width: 290px; height: 6px" id="hstop_slider" style="" > </div> 
+<div style="position:absolute; top:45px; left:400px;" id="hstop_lbl"> 1919</div>
+ 
+ 
+ 
+<div style="position:absolute; left:5px; top:190px;" class="box_rotate"  > V Start</div>
+<div style="position:absolute; left:50px; top:120px; width: 6px; height: 290px"   id="vstart_slider" style="" > </div> 
+<div style="position:absolute; left:40px; top:430px;" id="vstart_lbl"> 0</div>
+ 
+ 
+
+<div style="position:absolute; left:65px; top:190px;" class="box_rotate" > V Stop</div>
+<div style="position:absolute; left:105px; top:120px; width: 6px; height: 290px"    id="vstop_slider"  > </div> 
+<div style="position:absolute; left:100px; top:430px;" id="vstop_lbl"> 1079</div>
+ 
+ 
+
+ <div id="apertureTitle" style="position:absolute; left:195px; top:430px;"  >Input Aperture Preview </div>
+ <!--<div id="status"  style="position:absolute; left:10px; top:460px;"> </div>
+ -->
+</body>
+</html>

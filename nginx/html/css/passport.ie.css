@@ -1,0 +1,18 @@
+form table tr td.pregnant div div.value input {
+  height:1%;
+}
+
+
+form.popupform div {
+  text-align:center;
+}
+
+
+.popup div.popmain table {
+  margin:0px;
+}
+
+
+.popup div.tablebrowser table table {
+  display:block;
+}

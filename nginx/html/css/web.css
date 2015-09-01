@@ -1,0 +1,427 @@
+/* ***** Global **************************************************** */
+body {
+  font:normal 100% Arial,Geneva,sans-serif;
+  color: #FFF;
+  background-color: #4D4D4D;	
+  margin:0px;
+  padding:0px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+.complete_line
+{
+	height: 30px;
+/*	background-color : #ABCDEF;	*/
+	width: 100%;
+       	padding : 3px;	
+}
+
+.half_line
+{
+
+}
+
+.text
+{
+	position: relative;
+	float: left;
+	width: 195px;
+	font-family: "Arial Narrow", Arial, sans-serif;
+	font-size: 13px;
+	padding-top: 2px;
+	color: #000;
+}
+
+.dom
+{
+	position: relative;
+	float: left;
+}
+
+
+table {
+  font-size:100%;
+}
+img, li.first {
+  border-width:0px !important;
+  background-color:transparent !important;
+  background-image:none !important;
+  padding:0px !important;
+}
+.warning {
+  color:#ff0000;
+  font-weight:bold;
+}
+sub, sup {
+  line-height:0;
+}
+
+#top{
+ background-color:transparent;
+}
+
+/* ***** Header **************************************************** */
+#top #title {
+  color:#000000;
+  background:transparent url(../img/web.headerbkg.png) no-repeat scroll top left; 
+  height:85px;
+  min-width:900px;
+  top:-25px;
+  position:relative;
+}
+#top #title h1 {
+  margin:0px;
+  position:absolute;
+  top:30px;
+}
+#top #title ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+
+
+#top #title div#dynamicRT input {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+	 
+}
+
+#top #title div#applyRT input {
+  
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+	
+}
+ 
+#top #title div#refreshRT input {
+   
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+	 
+}
+
+#top #title div#refreshRT {
+  position:absolute;
+  top:26px;
+  left:260px;
+   font-weight:bold;
+   font-size:12px;
+}
+
+#top #title div#applyRT {
+  position:absolute;
+  top:26px;
+  left:370px;
+  font-weight:bold;
+  font-size:12px;
+}
+
+#top #title div#dynamicRT {
+  position:absolute;
+  top:26px;
+  left:480px;
+  font-weight:bold;
+  font-size:12px;
+}
+#top #title div#buttons {
+  position:absolute;
+  top:0px;
+  right:0px;
+}
+#top #title div#buttons table {
+  float:right;
+  height:23px;
+  background:transparent;
+  text-align:right;
+  margin:0px;
+}
+#top #title div#buttons table tr td {
+  vertical-align:top;
+  padding:0px;
+}
+ 
+#top #title div#buttons table tr td a,
+#top #title div#buttons table tr td span {
+  display:block;
+  margin:0px;
+  padding:3px 10px 0px 10px;
+  height:18px;
+  font:normal 8pt Tahoma,Arial,sans-serif;
+  background-color:transparent;
+  white-space:nowrap;
+  text-align:center;
+  color:#000000;
+  text-decoration:none;
+  border-left:1px solid #999999;
+}
+
+#top #title div#buttons table tr td .strong,
+#top #title div#buttons table tr td .first {
+  margin-left:4px;
+  padding-left:30px;
+  font-weight:bold;
+  border-left:0px none;
+}
+
+#top #title div#buttons table tr td a:hover,
+#top #title div#buttons table tr td span {
+  color:#FFFFFF;
+  background:transparent;
+}
+
+#top #title div#buttons table tr td a.first:hover,
+#top #title div#buttons table tr td span.first {
+  background-position:top left;
+}
+
+
+
+#top #modified {
+  position:absolute;
+  top:12px;
+  left:220px;
+}
+
+
+#top #outputlink {
+   position:absolute;
+  top:5px;
+  left:650px;
+  margin:0px;
+  padding:0px;
+  font-weight:bold;
+  color:#000000;
+  font-size:12px;
+  line-height:20px;
+  white-space:nowrap;
+}
+#top #outputlink a {
+  color:#000000;
+  text-decoration:none;
+}
+#top #outputlink a:hover {
+  text-decoration:underline;
+}
+#top #outputlink a img {
+  vertical-align:middle;
+}
+
+#top #navigation {
+  position:relative;
+  top:87px;
+  left:0px;
+  width:100%;
+  color:#ffffff;
+  /* background:#4d4d4d;*/
+ background-color:transparent;
+  font-weight:bold;
+  text-align:right;
+}
+
+#top #navigation ul {
+  list-style-type:none;
+  margin:0px 10px 0px 0px;
+  padding:0px 40px 2px 6px;
+  height:46px;
+  background:#4d4d4d url(../img/web.crumbbkg.png) no-repeat scroll top right;
+  float:left;
+  text-align:left;
+  white-space:nowrap;
+}
+#top #navigation ul li {
+  background:transparent url(../img/web.pointer.png) no-repeat scroll center left;
+  display:inline;
+  padding:0px 3px 0px 15px;
+}
+#top #navigation ul li a {
+  color:#ffffff;
+  background-color:inherit;
+  font-style:italic;
+  text-decoration:none;
+}
+#top #navigation ul li a:hover {
+  text-decoration:underline;
+}
+
+
+/* ***** Content *************************************************** */
+#content {
+  
+  z-index:5;
+  /* border-top:1px inset #808080; */
+}
+
+ 
+#content h2 {
+}
+
+ 
+#content a {
+  text-decoration:none;
+}
+#content a:hover {
+  text-decoration:underline;
+}
+
+#content #noscript {
+  display:block;
+  clear:both;
+  width:60%;
+  padding:30px 0px;
+  margin:0px auto;
+  text-align:center;
+  font-weight:bold;
+}
+#content #noscript p {
+  margin:4px;
+}
+#content #noscript ul {
+  text-align:left;
+}
+
+#dropdown {
+  margin:0px;
+  text-align:left;
+  min-height:1.3em;
+}
+
+/* ***** Error ***************************************************** */
+#content #error {
+  text-align:left;
+  width:80%;
+  margin:20px auto 0px auto;
+}
+
+.buttons a, .buttons button{
+    display:block;
+    float:left;
+    margin:0 7px 0 0;
+/*   background-color:#f5f5f5;	*/
+    background-color: inherit;
+    border:1px solid #dedede;
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:12px;
+    line-height:130%;
+    text-decoration:none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:5px 10px 6px 7px; /* Links */
+}
+.buttons button{
+    width:auto;
+    overflow:visible;
+    padding:4px 10px 3px 7px; /* IE6 */
+}
+.buttons button[type]{
+    padding:5px 10px 5px 7px; /* Firefox */
+    line-height:17px; /* Safari */
+}
+*:first-child+html button[type]{
+    padding:4px 10px 3px 7px; /* IE7 */
+}
+.buttons button img, .buttons a img{
+    margin:0 3px -3px 0 !important;
+    padding:0;
+    border:none;
+    width:16px;
+    height:16px;
+}
+
+/* STANDARD */
+
+button:hover, .buttons a:hover{
+/*    background-color:#dff4ff;	*/
+    border:1px solid #A3A3A3;
+    color:#336699;
+}
+.buttons a:active{
+/*    background-color:#6299c5;	*/
+    border:1px solid #A3A3A3;
+    color:#fff;
+}
+
+/* POSITIVE */
+
+button.positive, .buttons a.positive{
+    color:#529214;
+}
+.buttons a.positive:hover, button.positive:hover{
+ /*   background-color:#E6EFC2;	*/
+    border:1px solid #A3A3A3;
+    color:#529214;
+}
+.buttons a.positive:active{
+/*    background-color:#529214;	*/
+    border:1px solid #A3A3A3;
+    color:#fff;
+}
+
+/* NEGATIVE */
+
+.buttons a.negative, button.negative{
+    color:#d12f19;
+}
+.buttons a.negative:hover, button.negative:hover{
+/*    background:#fbe3e4;	*/
+    border:1px solid #A3A3A3;
+    color:#d12f19;
+}
+.buttons a.negative:active{
+/*    background-color:#d12f19;	*/
+    border:1px solid #A3A3A3;
+    color:#fff;
+}
+
+/* REGULAR */
+
+button.regular, .buttons a.regular{
+    color:#336699;
+}
+.buttons a.regular:hover, button.regular:hover{
+/*    background-color:#dff4ff;	*/
+    border:1px solid #A3A3A3;
+    color:#336699;
+}
+.buttons a.regular:active{
+/*    background-color:#6299c5;	*/
+    border:1px solid #A3A3A3;
+    color:#fff;
+}
+
+ 
+
+#sidebar .label{padding-left:10px; line-height:30px; width:140px;   font-family: "Arial Narrow", Arial, sans-serif; font-size:14px; font-weight:bold;  color:#000000; letter-spacing:2px; white-space:nowrap;}
+#sidebar .footlink{display:block;  color:#000000;}
+#sidebar li.footlink{position:relative; left:15px;}
+#sidebar .footlink a:hover{background-color:#dddddd;  font-family: "Arial Narrow", Arial, sans-serif; font-size:12px; font-style:normal;  color:black;}
+ 
+/* ***** Print Rules *********************************************** */
+@media print {
+  #top #title ul#lang,
+  #top #title div#buttons,
+  #top #title form#search,
+  #top #navigation form {
+    display:none;
+  }
+
+  #top #navigation {
+    text-align:left;
+  }
+
+  #content {
+    border-top:1px solid #ffffff;
+
+  }
+  
+ 
+  
+}

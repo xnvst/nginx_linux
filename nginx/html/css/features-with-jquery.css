@@ -1,0 +1,16 @@
+  
+		.vmenu{
+		border:1px solid #000;
+		position:absolute;
+		background:#5286B5;
+		text-align:left; 
+		color:#000000;
+		display:none;font-size:0.75em;}
+		
+		input  { cursor:pointer}
+		.first_li span{width:100px;display:block;  border:0px; cursor:pointer}
+		.first_li  a{color:#000000; }
+		
+		.inner_li{display:none;margin-left:120px;position:absolute;border:1px solid #aaa;border-left:1px solid #ccc;margin-top:-28px;background:#5286B5;}
+		.sep_li{border-top: 1px ridge #aaa;margin:5px 0}
+		.fill_title{font-size:11px;font-weight:bold;/height:15px;/overflow:hidden;word-wrap:break-word;}

@@ -1,0 +1,844 @@
+#content {
+  left:280px;
+  top:-20px;
+  min-width:850px;
+  color:#000000;
+}
+#content h2 {
+  font-size:30px;
+  font-style:normal;
+  color: #000000;
+  text-align:right;
+  margin:0px 20px;
+  padding:0px 10px 5px 10px;
+  border-bottom:2px groove #999999;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+#content .indexselect {
+  font-size:13px;
+  color: #000000;
+  text-align:center;
+  margin:0px 0px;
+  padding:45px 0px 5px 0px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+#content h3 {
+  font-size:18px;
+  color: #000000;
+  text-align:center;
+  margin:10px 20px;
+  padding:0px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+#content h4 {
+  font-size:16px;
+  text-align:left;
+  margin:0px 20px;
+  padding:0px 10px 0px 0px;
+  border-bottom:1px solid #999999;
+}
+#content h4 button {
+  font-size:11px;
+  vertical-align:middle;
+  margin:0px 0px 2px 0px;
+}
+
+#content label {
+  display:block;
+}
+
+#content p {
+  margin:10px 20px;
+  text-align:left;
+  font-size:14px;
+}
+#content p img {
+  display:block;
+  margin:0px auto;
+}
+
+#content div#diagram {
+  margin:10px auto;
+  text-align:left;
+  font-size:14px;
+  width:800px;
+  position:relative;
+}
+#content div#diagram img {
+  display:block;
+  margin:0px auto;
+}
+#content div#diagram img.piece {
+  position:absolute;
+  cursor:pointer;
+}
+
+form {
+  margin:0px;
+  padding:0px;
+}
+p.center {
+  text-align:center !important;
+}
+
+.disabled {
+  color:#999999;
+}
+
+
+form table {
+  background-color:#aaaaaa;
+  font-size:12px;
+  min-width:520px;
+  margin:25px auto 30px auto;
+ 
+}
+
+form .containerex{
+  background-color:#aaaaaa;
+  font-size:12px;
+  width:620px;
+  margin:25px auto 30px auto;
+ 
+}
+
+
+form  .container tr th {
+    color: #000000;
+	position: relative;
+	float: left;
+	font-family: "Arial Narrow", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	padding:4px 10px;
+	width:40%;
+	text-align: right;
+}
+form .container thead tr th {
+  background:#222222 url(../img/table-fade-topper.png) repeat-x scroll left top;
+  color:#000000;
+  text-align:right;
+    overflow: visible;
+    width: 190px;
+}
+ 
+form  .container tr td {
+  width:50%;
+  float: right;
+  text-align:left;
+  padding:4px 10px;
+  white-space:nowrap;
+  overflow: visible;
+}
+
+
+form table tr td.pregnant {
+  padding:0px;
+  background-color:#aaaaaa;
+}
+form table tr td.pregnant div {
+  position:relative;
+  zoom:1;
+}
+form table tr td.pregnant div var {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  padding-top:6px;
+  white-space:nowrap;
+  text-align:center;
+  font:bold 14px Arial,sans-serif;
+  color:#666666;
+  background-color:#aaaaaa;
+  visibility:hidden;
+}
+form table tr td.pregnant div div.value {
+  background-color:#eeeeee;
+  padding:4px 10px;
+}
+form table tr.nochange td.pregnant div var {
+  visibility:inherit;
+}
+form table tr.nochange td.pregnant div div.value {
+  visibility:hidden;
+}
+
+
+
+form table.container {
+  background-color:transparent;
+  margin-bottom:0px;
+}
+form table.container tr td.column {
+  background-color:transparent;
+  vertical-align:top;
+}
+form table.container tr td.column table {
+  width:100%;
+  margin:0px auto 10px auto !important;
+}
+
+
+#content #errormessages {
+  border:2px solid red;
+  background-color:#ffcccc;
+  color:#ff0000;
+  width:50%;
+  margin:10px auto 0px auto;
+  padding:5px 0px 5px 2em;
+  font-size:12px;
+}
+
+
+
+#content #footer {
+  clear:both;
+  font-size:12px;
+  text-align:right;
+  width:90%;
+  margin:0px auto;
+  padding:10px 0px;
+  position: absolute; 
+  bottom: 0;
+  z-index:0;
+}
+#content #footer .backlink {
+  float:left;
+}
+
+ 
+/* ************************************************************* */
+#content ul#frontpanelbuttonmap {
+  margin:0px auto;
+  padding:0px;
+  list-style-type:none;
+  width:1000px;
+  height:103px;
+  position:relative;
+  background:#ffffff url(../img/front-panel-buttons.png) no-repeat scroll left top;
+}
+
+#content ul#frontpanelbuttonmap li {
+  display:block;
+  width:17px;
+  height:17px;
+  padding:0px;
+  border-width:1px;
+  border-style:solid;
+
+  border-top-color:#8DF341;
+  border-right-color:#4CB200;
+  border-bottom-color:#4CB200;
+  border-left-color:#8DF341;
+  background-color:#21ff00;
+
+  position:absolute;
+  font:bold 12px Arial,Helvetica,Geneva,Trebuchet,sans-serif;
+  cursor:pointer;
+}
+#content ul#frontpanelbuttonmap li span {
+  line-height:16px;
+}
+#content ul#frontpanelbuttonmap li img {
+  display:block;
+  margin:2px auto 0px auto;
+}
+
+#content ul#frontpanelbuttonmap li#button1 { top: 26px; left:803px; }
+#content ul#frontpanelbuttonmap li#button2 { top: 26px; left:832px; }
+#content ul#frontpanelbuttonmap li#button3 { top: 26px; left:863px; }
+#content ul#frontpanelbuttonmap li#button4 { top: 26px; left:892px; }
+#content ul#frontpanelbuttonmap li#button5 { top: 59px; left:803px; }
+#content ul#frontpanelbuttonmap li#button6 { top: 59px; left:832px; }
+#content ul#frontpanelbuttonmap li#button7 { top: 59px; left:863px; }
+#content ul#frontpanelbuttonmap li#button8 { top: 59px; left:892px; }
+
+#content ul#frontpanelbuttonmap li.selected {
+  border-top-color:#0C7200;
+  border-right-color:#4DB341;
+  border-bottom-color:#4DB341;
+  border-left-color:#0C7200;
+  background-color:#119900;
+}
+
+ 
+
+div#mainFormContainer {
+  display:none;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:1000;
+}
+
+.popup {
+  position:absolute;
+  top:0px;
+  left:0px;
+  visibility:hidden;
+  z-index:1000;
+  color:#000000;
+  border:1px outset #000000;
+  padding:0px;
+}
+.popup h3 {
+  padding:3px 100px 3px 5px;
+  margin:0px;
+  font-size:14px;
+  text-align:left;
+  background:#ffee88 url(../img/stdwin.header.png) repeat-x scroll left top;
+  border-bottom:1px solid #663000;
+  white-space:nowrap;
+}
+.popup h3 var {
+  font-style:normal;
+}
+.popup h4 {
+  font-size:14px;
+  text-align:left;
+  margin:0px 10px 5px 10px;
+  white-space:nowrap;
+  color:#444444;
+}
+.popup span.cancel,
+.popup span.closer {
+  font-size:11px;
+  font-weight:bold;
+  position:absolute;
+  top:3px;
+  right:5px;
+  cursor:pointer;
+  display:block;
+  border:1px outset #99aabb;
+  background-color:#99aabb;
+  padding:1px 5px;
+}
+.popup span.cancel {
+  right:55px;
+}
+
+.popup div.popmain {
+  margin:0px;
+  background:#e7e7e7 url(../img/stdwin.bkg.jpg) repeat-x scroll left top;
+  padding:10px;
+  text-align:center;
+}
+.popup div.popmain table {
+  margin:0px auto !important;
+  text-align:left;
+}
+.popup div.popmain table div {
+  padding:0px;
+  text-align:right;
+}
+.popup div.popmain table.container {
+  margin:0px 0px -10px 0px;
+}
+.popup div.popmain table.container tr td.column {
+  padding:0px 0px 0px 10px;
+
+}
+.popup div.popmain table.container tr td.first {
+  padding:0px;
+}
+.popup div.popmain table.container tr td.column table {
+  margin:0px 0px 10px 0px;
+}
+
+.popup div.tablebrowser {
+  padding:0px;
+  margin:10px;
+  position:relative;
+  zoom:1;
+}
+.popup div.tablebrowser table {
+  margin:0px auto;
+  text-align:center;
+  zoom:1;
+  display:none;
+}
+.popup div.tablebrowser table table {
+  display:table;
+}
+
+.popup ul.channeler {
+  width:240px;
+  height:60px;
+  margin:0px auto 10px auto;
+  padding:0px;
+  list-style-type:none;
+}
+.popup ul.channeler li {
+  float:left;
+  width:26px;
+  height:26px;
+  border:2px outset #dddddd;
+  background-color:#dddddd;
+  margin:0px;
+  padding:0px;
+  text-align:center;
+  line-height:26px;
+  font-size:13px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.popup ul.channeler li.selected {
+  border:2px inset #bbbbbb;
+  background-color:#bbbbbb;
+}
+
+
+
+/* ************************************************************* */
+table#commitcontainer {
+  position:absolute;
+  width:750px;
+  left:300px;
+  margin:20px auto 10px auto;
+  color:#000000;
+  
+}
+
+table#commitcontainer thead tr th {
+  background-color:#5a5a5a;
+  
+  padding:6px 10px;
+  font-size:18px;
+  white-space:nowrap;
+}
+
+ 
+table#commitcontainer tbody tr.imagerow td {
+  padding:5px 0px;
+  text-align:center;
+}
+table#commitcontainer tbody tr.imagerow td img {
+  vertical-align:middle;
+}
+table#commitcontainer tbody tr td.column {
+  vertical-align:top;
+  padding:10px;
+  background-color:#4d4d4d;
+  border:2px groove #bbbbbb;
+}
+table#commitcontainer tbody tr td.column h3 {
+  margin:0px 3px 5px 3px;
+  border-bottom:1px solid #777777;
+  text-align:center;
+  font-size:16px;
+}
+table#commitcontainer tbody tr td.column h3 img {
+  vertical-align:middle;
+}
+table#commitcontainer tbody tr td.column form,
+table#commitcontainer tbody tr td.column div {
+  margin-bottom:15px;
+}
+table#commitcontainer tbody tr td.column p {
+  margin:10px 0px 0px 0px;
+  text-align:center;
+  font-size:12px;
+}
+table#commitcontainer tbody tr td.column input {
+  font-size:12px;
+}
+table#commitcontainer tbody tr td.column p img {
+  display:inline;
+  vertical-align:middle;
+}
+
+table#config_list {
+  background-color:#444444;
+  font-size:12px;
+  margin:0px auto;
+}
+table#config_list thead tr th {
+  background-color:#5a5a5a;
+  color:#000000;
+  padding:2px 10px;
+  font-size:14px;
+  white-space:nowrap;
+}
+table#config_list thead tr th small {
+  font-size:12px;
+  font-weight:normal;
+}
+table#config_list tbody tr th {
+  background-color:#dddddd;
+  white-space:nowrap;
+  padding:2px 7px;
+  text-align:left;
+}
+table#config_list tbody tr td {
+  background-color:#eeeeee;
+  white-space:nowrap;
+  padding:2px 6px;
+  vertical-align:middle;
+}
+table#config_list tbody tr td img {
+  cursor:pointer;
+  vertical-align:middle;
+}
+table#config_list tbody tr td.occupied {
+  background-color:#ffff77;
+}
+
+iframe#hiddentarget {
+  display:none;
+}
+
+
+/* ***** Button Group Configuration ******************************** */
+form#button_groups div table tr td p {
+  margin:5px auto;
+  text-align:center;
+}
+
+table#buttonexchange tbody tr td ul.bg_buttonlist {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  height:200px;
+  width:100px;
+  overflow:auto;
+  border:1px inset #888888;
+  background-color:#dddddd;
+  text-align:left;
+}
+table#buttonexchange tbody tr td ul.bg_buttonlist li {
+  padding:1px 30px 1px 4px;
+  cursor:pointer;
+}
+table#buttonexchange tbody tr td ul.bg_buttonlist li.hover {
+  background-color:#cccccc;
+}
+table#buttonexchange tbody tr td ul.bg_buttonlist li.selected {
+  background-color:#eeeeaa;
+}
+table#buttonexchange tbody tr td ul.bg_buttonlist li.grouped {
+  color:#666666;
+}
+table#buttonexchange tbody tr td ul.bg_buttonlist li.default {
+  font-weight:bold;
+}
+
+table#buttonexchange tbody tr td img {
+  cursor:pointer;
+}
+
+ol#groups_list {
+  text-align:left;
+  margin:5px 0px 0px 20px;
+  padding:0px 0px 100px 2em;
+  font-size:12px;
+}
+ol#groups_list li {
+  float:left;
+  width:24%;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+
+/* ************************************************************* */
+ul#stackmenu {
+  margin:0px;
+  padding:10px 0px 0px 0px;
+  list-style-type:none;
+  width:640px;
+  margin:0px auto;
+  height:20px;
+  position:relative;
+  z-index:1;
+}
+ 
+
+ul#stackmenu li {
+  float:right;
+  height:14px;
+  padding:2px 4px;
+  margin:0px 0px;
+  border:1px solid #888888;
+  border-bottom:0px none;
+  color:#666666;
+  background-color:#cccccc;
+  font:normal 10px Arial,Geneva,sans-serif;
+}
+
+ul#stackmenu li.selected {
+  height:14px;
+  margin:0px 0px;
+  background-color:#eeeeee;
+  color:#000000;
+  font:bold 12px Arial,Geneva,sans-serif;
+}
+
+
+div#stackbox {
+  position:relative;
+  z-index:0;
+}
+div#stackbox span#loadingmsg {
+  font-size:40px;
+  font-weight:bold;
+  position:relative;
+  top:50px;
+}
+div#stackbox span#loadingmsg img {
+  vertical-align:middle;
+}
+div#stackbox form {
+  /* position:absolute;
+  top:0px;
+  left:0px; */
+  border:2px solid #bbbbbb;
+   
+  padding:0px;
+  z-index:0;
+  width:640px;
+  margin:0px auto;
+  display:none;
+}
+
+ 
+
+div#stackbox form h3 {
+  margin:0px;
+  padding:5px 10px;
+  background-color:#eeeeee;
+  text-align:center;
+  cursor:pointer;
+}
+
+div#stackbox form h4 {
+  margin:0px;
+  padding:5px 10px;
+  color: #737373;
+  background-color:#eeeeee;
+  text-align:center;
+  cursor:pointer;
+}
+
+div#stackbox form.top {
+  display:block;
+}
+div#stackbox form.top select {
+  visibility:visible;
+}
+
+
+/* ************************************************************* */
+iframe {
+  border:1px solid #777777;
+  width:460px;
+  height:475px;
+}
+
+input:hover {
+    cursor: crosshair;
+}
+
+#content form .container tr input[type="text"]
+{
+	width: 180px;
+	padding: 2px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-style: solid;
+	border-color: #000;
+	border-width: 1px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	 cursor:pointer;
+}
+
+#content form table tr td div span
+{
+	color: #000000;
+	font-family: "Arial";
+	font-size: 11px;
+	font-weight:italic;	 
+	float:right;
+}
+
+
+#content form table tr td  span 
+{
+	 
+	color: #000000;
+}
+
+#content form table tr td div span span
+{
+	float:left;
+	color: #000000;
+}
+
+option {
+    background-color: #DCDCDC;  
+    border-bottom: 1px solid #ebdac0;
+    border-right: 1px solid #d6bb86;
+    border-left: 1px solid #d6bb86;
+}
+option:hover {
+    cursor: pointer;
+}
+
+#content form table tr td div
+{
+    overflow: inherit;
+    width: 240px;
+	text-align:left;
+
+}
+
+#content form .container tr select
+{
+	width: 192px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 1px;
+	padding-left: 5px;
+	border-style: solid;
+	border-color: #FFF;
+	border-width: 1px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 80%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;	
+  
+}
+
+#content form .container tr  td .subgrouptitle{
+    float:left;
+	color: #000000;
+	font-size: 13px;
+	font-weight:bold;	 
+	position: relative;
+	left: -40px;
+}
+
+form table.expandcontainer {
+  background-color:transparent;
+  margin-bottom:0px;
+   color:#000000;
+}
+
+#content form .expandcontainer tr .expandidx
+{
+width: 40px;
+padding-right: 15px;
+text-align: right;
+}
+
+#content form .expandcontainer tr input[type="text"]
+{
+	width: 110px;
+	padding: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-style: solid;
+	border-color: #000;
+	border-width: 1px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	 cursor:pointer;
+}
+
+#content form .expandcontainer tr select
+{
+	width: 110px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-style: solid;
+	border-color: #FFF;
+	border-width: 1px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 80%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;	
+   cursor:pointer;
+}
+
+
+#content form .container tr input[type="button"]
+{
+	width: 110px;	
+	padding: 0.2em;
+    border: 3px outset;
+    border-color:  #c7b097 #A2B9D1 #A2B9D1 #c7b097;
+	font-weight:bold;
+	font-family: "Arial Narrow", Arial, sans-serif;
+	cursor:pointer;
+}
+
+#content form .container tr input[type="button"]:hover
+{
+background: #fa1;
+border-color: #F5F5F5 #d4d4d4 #d4d4d4 #F5F5F5
+} 
+
+#content form .expandcontainer tr input[type="button"]
+{
+	width: 110px;	
+	padding: 0.2em;
+    border: 3px outset;
+    border-color:  #c7b097 #A2B9D1 #A2B9D1 #c7b097;
+	font-weight:bold;
+    font-family: "Arial Narrow", Arial, sans-serif;
+	cursor:pointer;
+}
+
+#content form .expandcontainer tr input[type="button"]:hover
+{
+background: #fa1;
+border-color:#F5F5F5 #d4d4d4 #d4d4d4 #F5F5F5
+} 
+
+#portamento_container{width:274px; padding:5px; background: transparent;   position:absolute; left:0px; top:150px;}	
+#portamento_container #sidebar{}
+#portamento_container #sidebar.fixed {position:fixed; left:auto; top:auto;} /*portamento_container become fixed position, but reset the top and right values */
+#sidebar li  a{
+  color:#000000;
+  text-decoration: none
+}
+
+#sidebar li  {
+  font-size:12px;
+}

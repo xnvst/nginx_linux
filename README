@@ -1,0 +1,55 @@
+README FILE FOR PORTING NGINX TO LINUX PLATFORM
+------------------------------------------------------
+
+
+Packages Included
+----------------------
+nginx-0.6.39.tar.gz: nginx-0.6.39 source tar; 
+pcre-8.21.tar.bz2: pcre-8.21 source tar;
+nginx-0.6.39: pre-configured and compiled nginx folder for Netra;
+pcre-8.21: pre-configured and compiled pcre folder for Netra;
+nginx:  pre-compiled nginx install folder for Netra.
+
+
+Build Process
+----------------------
+I.  prepare nginx & pcre source:
+1.  get nginx-0.6.39 and uncompress
+2.  get pcre-8.21 and uncompress to the same path
+
+II. nginx part 1
+3.  cd nginx-0.6.39
+4.  find a path with sudo previlidge as ${target rootfs dest path}, e.g. /home/netra/nginx
+5.  run '../configure --prefix=${target rootfs dest path} --without-http_gzip_module --with-pcre=../pcre-8.21'
+6.  manually modify ./objs/makefile to accomodate with the tool chain, refer to pre-compiled nginx package
+
+III. pcre part
+7.  cd pcre_8.21
+8.  run './configure'
+9.  manually modify ./makefile to accomodate with the tool chain, refer to pre-compiled pcre package
+10. manually modify ./libtool to accomodate with the tool chain, refer to pre-compiled pcre package
+11. run 'make'
+12. cp shared library ./libs/libpcre.so to target rootfs and chmod 777 for it
+
+IV. nginx part 2
+13. cd nginx-0.6.39
+14. run 'make'
+15. create prefix install dir as the same path of {target rootfs dest path} above, if path exists, clear its content
+16. make install
+17. modify ${target rootfs dest path}/conf/nginx.conf, refer to pre-compiled nginx install folder
+18. cp all web pages under ${target rootfs dest path}/html
+19. cp generated folder to target rootfs and chmod 777 for all the content within it
+
+
+Running nginx
+----------------------
+start framework processes as usual;
+kill all httpd and php related process;
+run 'php-cgi -b 127.0.0.1:9000 &', or create an init script and run it;
+cd ${target rootfs dest path}/sbin and run './nginx'.
+
+
+Website
+----------------------
+http://nginx.org/en/
+http://www.pcre.org

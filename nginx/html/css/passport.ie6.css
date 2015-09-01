@@ -1,0 +1,14 @@
+#content {
+  width:850px;
+  margin:0px auto;
+}
+
+
+.popup div.popmain table {
+  margin:0px !important;
+}
+
+
+div#stackbox form select {
+  visibility:hidden;
+}
